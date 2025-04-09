@@ -1,0 +1,22 @@
+import tkinter as tk
+
+def convertir():
+    n=e.get()
+    if n.isdigit():
+        n=int(n)
+        b.config(text=bin(n)[2:])
+        o.config(text=oct(n)[2:])
+        h.config(text=hex(n)[2:].upper())
+    else:
+        b.config(text="Error")
+        o.config(text="")
+        h.config(text="")
+
+ventana=tk.Tk()
+root.geometry("1000x1000")
+e=tk.Entry(root)
+e.pack()
+tk.Button(root, text="Convertir", command=convertir).pack()
+b, o, h =tk.Label(root), tk.Label(root), tk.Label(root)
+b.pack(), o.pack(), h.pack()
+root.mainloop()
